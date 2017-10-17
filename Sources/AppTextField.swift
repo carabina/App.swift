@@ -67,7 +67,7 @@ open class AppTextField: TextField, TextFieldDelegate {
 
 public extension AppTextField.Validator {
     @discardableResult
-    func notEmpty(msg: String, trimmingSet: CharacterSet? = .whitespacesAndNewlines) -> Self {
+    func notEmpty(msg: String = App.strings.mandatoryField, trimmingSet: CharacterSet? = .whitespacesAndNewlines) -> Self {
         let trimmingSet = trimmingSet ?? .init()
         return custom(msg: msg) {
             $0.trimmingCharacters(in: trimmingSet).isEmpty
@@ -75,7 +75,7 @@ public extension AppTextField.Validator {
     }
     
     @discardableResult
-    func email(msg: String) -> Self {
+    func email(msg: String = App.strings.incorrectEmail) -> Self {
         return custom(msg: msg) {
             let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
             
