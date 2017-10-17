@@ -1,6 +1,5 @@
 [![Platform iOS](https://img.shields.io/cocoapods/p/App.swift.svg?style=flat)](https://github.com/BiAtoms/App.swift)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/App.swift.svg)](https://cocoapods.org/pods/App.swift)
-[![Build Status - Master](https://travis-ci.org/BiAtoms/App.swift.svg?branch=master)](https://travis-ci.org/BiAtoms/App.swift)
 
 # App.swift
 
