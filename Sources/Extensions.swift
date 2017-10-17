@@ -327,8 +327,8 @@ public extension UIViewController {
     }
     
     @discardableResult
-    func showNoInternetBannerIfNeeded(_ err: ApiError) -> Bool {
-        if err.isLocalError {
+    func showNoInternetBannerIfNeeded(_ err: ApiError?) -> Bool {
+        if err?.isLocalError ?? false {
             showNoInternetBanner()
             return true
         }
