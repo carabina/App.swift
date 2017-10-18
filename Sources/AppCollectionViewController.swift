@@ -45,6 +45,14 @@ open class AppCollectionViewController<Cell: AppCollectionViewCell, T: JSONAble,
         }
     }
     
+    open var isPaginated = false {
+        didSet {
+            if oldValue != isPaginated {
+                collectionView.register(isPaginated ? LoadMoreFooter.self : nil, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "loadMoreFooter")
+            }
+        }
+    }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(collectionView)
@@ -65,9 +73,6 @@ open class AppCollectionViewController<Cell: AppCollectionViewCell, T: JSONAble,
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(Cell.self)
-        if isPaginated {
-            collectionView.register(LoadMoreFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "loadMoreFooter")
-        }
         prepare(flowLayout: flowLayout)
         
         self.view.addView(loadingOverlay).makeConstraints {

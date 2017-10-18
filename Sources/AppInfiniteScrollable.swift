@@ -32,17 +32,6 @@ fileprivate var IsLastPageReachedKey: UInt8 = 0
 fileprivate var CurrentPageKey: UInt8 = 0
 
 extension AppInfiniteScrollable {
-    public var isPaginated: Bool {
-        get {
-            return AppAssociatedObject.get(base: self, key: &IsPaginatedKey) {
-                false
-            }
-        }
-        set {
-            AppAssociatedObject.set(base: self, key: &IsPaginatedKey, value: newValue)
-        }
-    }
-    
     public var isLoadingNextPage: Bool {
         get {
             return AppAssociatedObject.get(base: self, key: &IsLoadingNextPageKey) {

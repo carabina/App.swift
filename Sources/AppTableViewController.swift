@@ -15,7 +15,7 @@ open class AppTableViewController<Cell: AppTableViewCell, T: JSONAble, F: ApiErr
     open let tableView  = UITableView()
     open var data: [T] = []
     open var refreshControl = UIRefreshControl()
-    
+    open var isPaginated = false
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(tableView)
