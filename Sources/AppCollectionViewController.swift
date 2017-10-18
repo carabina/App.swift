@@ -86,7 +86,7 @@ open class AppCollectionViewController<Cell: AppCollectionViewCell, T: JSONAble,
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .lightGray
-        label.text = "Heçnə yoxdur"
+        label.text = App.strings.noItem
         return label
     }()
 
