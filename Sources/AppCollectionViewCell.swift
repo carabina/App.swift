@@ -1,6 +1,6 @@
 //
 //  AppCollectionViewCell.swift
-//  LaundryApp
+//  AppSwift
 //
 //  Created by Orkhan Alikhanov on 8/15/17.
 //  Copyright © 2017 ATL Info Tech. All rights reserved.

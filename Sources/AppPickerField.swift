@@ -1,6 +1,6 @@
 //
 //  AppPickerField.swift
-//  LaundryApp
+//  AppSwift
 //
 //  Created by Orkhan Alikhanov on 8/10/17.
 //  Copyright © 2017 ATL Info Tech. All rights reserved.
