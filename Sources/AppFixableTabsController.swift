@@ -72,6 +72,7 @@ open class AppFixableTabsController: AppViewController, TabsControllerDelegate {
         let tabBar = childTabsController.tabBar
         self.scrollView.fixedContainer.addSubview(tabBar)
         scrollView.fixedContainer.heightPreset = tabBar.heightPreset
+        tabBar.isDividerHidden = false /// we depth for bottom shadow, and divider for the top line (default divider alignment is .top for tabBar)
         
         self.scrollView.scrollViewToChangeOffset = delegate?.appFixableTabsController?(self, scrollViewAt: 0)
     }

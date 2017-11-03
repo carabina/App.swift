@@ -14,6 +14,7 @@ open class AppTabsController: TabsController {
         super.prepare()
         
         tabBar.lineColor = App.colors.primary
+        tabBar.isDividerHidden = true // we use DepthPreset (shadow)
         tabBar.depthPreset = .depth1
         tabBar.tabItems.forEach {
             $0.fontSize = 16
