@@ -17,5 +17,6 @@ open class AppTabBarController: UITabBarController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = App.colors.background
+        self.tabBar.tintColor = App.colors.primary
     }
 }
