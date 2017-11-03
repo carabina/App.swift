@@ -17,8 +17,8 @@ open class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.makeKeyAndVisible()
         
-        restart()
         prepare()
+        restart()
         return true
     }
     
