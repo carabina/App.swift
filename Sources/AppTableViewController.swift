@@ -16,6 +16,34 @@ open class AppTableViewController<Cell: AppTableViewCell, T: JSONAble, F: ApiErr
     open var data: [T] = []
     open var refreshControl = UIRefreshControl()
     open var isPaginated = false
+    
+    open var isRefreshControlEnabled: Bool {
+        get {
+            if #available(iOS 10.0, *) {
+                return tableView.refreshControl == refreshControl
+            } else {
+                return tableView.subviews.first == refreshControl
+            }
+        }
+        set {
+            guard newValue != isRefreshControlEnabled else { return }
+            if newValue {
+                if #available(iOS 10.0, *) {
+                    tableView.refreshControl = refreshControl
+                } else {
+                    tableView.insertSubview(refreshControl, at: 0)
+                }
+            } else {
+                refreshControl.endRefreshing()
+                if #available(iOS 10.0, *) {
+                    tableView.refreshControl = nil
+                } else {
+                    refreshControl.removeFromSuperview()
+                }
+            }
+        }
+    }    
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(tableView)
@@ -25,11 +53,7 @@ open class AppTableViewController<Cell: AppTableViewCell, T: JSONAble, F: ApiErr
         
         tableView.register(Cell.self)
         tableView.rowHeight = Cell.rowHeight
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.insertSubview(refreshControl, at: 0)
-        }
+        isRefreshControlEnabled = true
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
