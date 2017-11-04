@@ -44,3 +44,9 @@ extension App.Api: SugarTargetType {
         return App.Api.defaultHeaders()
     }
 }
+
+extension App.Api {
+    public convenience init( _ string: String) {
+        self.init(.get(string))
+    }
+}
