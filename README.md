@@ -3,7 +3,9 @@
 
 # App.swift
 
-A bunch of components/code that I use frequently.
+A bunch of components/code that I use. I abstracted away api access and simplifies many many ui related things (TableViewController, CollectionViewController, Theming, UserDefaults).
+
+Requires swift 3.
 
 ## Installation
 
